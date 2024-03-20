@@ -116,20 +116,19 @@ function getNextFriday(date) {
  * 2, 2024 => 29
  */
 function getCountDaysInMonth(month, year) {
-  console.log(month, year);
   const startDate = new Date(year, month - 1);
   const endDate = new Date(year, month);
-  console.log(startDate, endDate);
 
   const startDateTimestamp = Date.parse(startDate);
   const endDateTimestamp = Date.parse(endDate);
 
   const dayDuration = 24 * 60 * 60 * 1000;
 
-  const days = Math.ceil((endDateTimestamp - startDateTimestamp) / dayDuration);
-  console.log(days);
+  const daysNum = Math.ceil(
+    (endDateTimestamp - startDateTimestamp) / dayDuration
+  );
 
-  return days;
+  return daysNum;
 }
 
 /**
